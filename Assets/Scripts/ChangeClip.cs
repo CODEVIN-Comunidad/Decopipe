@@ -31,6 +31,8 @@ public class ChangeClip : MonoBehaviour
     //This method change the audioclip after push a button
     public void ChangeAudio()
     {
+        GameObject.Find("Button").SetActive(false);
+        GameObject.Find("Text").SetActive(false);
         canvas.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Music/Hit trompetas");
         canvas.GetComponent<AudioSource>().Play();
         canvas.GetComponent<AudioSource>().loop = false;

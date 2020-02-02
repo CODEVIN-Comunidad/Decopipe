@@ -11,6 +11,7 @@ public class TriggerEvent : MonoBehaviour
     private GameObject blue;
     private AudioSource jumpTrumpet;
 
+    public static AudioSource backgroundMusic;
     public static float jump;
 
     // Start is called before the first frame update
@@ -20,7 +21,8 @@ public class TriggerEvent : MonoBehaviour
         brown = GameObject.Find("BrownButton");
         red = GameObject.Find("RedButton");
         blue = GameObject.Find("BlueButton");
-        jumpTrumpet = GameObject.Find("Grid").GetComponent<AudioSource>();
+        jumpTrumpet = GameObject.Find("Grid2").GetComponent<AudioSource>();
+        backgroundMusic = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,7 +33,6 @@ public class TriggerEvent : MonoBehaviour
 
     public void TouchYellow()
     {
-        jump = 5;
         OnCollisionEnter2D();
         jumpTrumpet.clip = Resources.Load<AudioClip>("Music/Botón 2");
         jumpTrumpet.Play();
@@ -39,7 +40,6 @@ public class TriggerEvent : MonoBehaviour
 
     public void TouchBrown()
     {
-        jump = 10;
         OnCollisionEnter2D();
         jumpTrumpet.clip = Resources.Load<AudioClip>("Music/Botón 4");
         jumpTrumpet.Play();
@@ -47,7 +47,6 @@ public class TriggerEvent : MonoBehaviour
 
     public void TouchRed()
     {
-        jump = 8;
         OnCollisionEnter2D();
         jumpTrumpet.clip = Resources.Load<AudioClip>("Music/Botón 1");
         jumpTrumpet.Play();
@@ -55,7 +54,6 @@ public class TriggerEvent : MonoBehaviour
 
     public void TouchBlue()
     {
-        jump = 6;
         OnCollisionEnter2D();
         jumpTrumpet.clip = Resources.Load<AudioClip>("Music/Botón 3");
         jumpTrumpet.Play();
@@ -78,7 +76,6 @@ public class TriggerEvent : MonoBehaviour
     {
         if (collision.gameObject.tag == "Flag")
         {
-            Debug.Log("Ouch");
             yellow.GetComponent<Button>().enabled = true;
             brown.GetComponent<Button>().enabled = true;
             red.GetComponent<Button>().enabled = true;
@@ -88,7 +85,13 @@ public class TriggerEvent : MonoBehaviour
             brown.GetComponent<Image>().enabled = true;
             red.GetComponent<Image>().enabled = true;
             blue.GetComponent<Image>().enabled = true;
+        }
 
+        if (collision.gameObject.tag == "End")
+        {
+            MoveGround.state = 2;
+            backgroundMusic.clip = Resources.Load<AudioClip>("Music/Hit trompetas");
+            backgroundMusic.Play();
         }
     }
 }

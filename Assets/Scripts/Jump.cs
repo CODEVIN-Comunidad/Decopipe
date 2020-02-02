@@ -5,15 +5,14 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
 
-    public float jumpForce;
-    private Rigidbody2D rigidbody;
+    //public float jumpForce;
+    private Rigidbody2D rigidBody;
 
     // Start is called before the first frame update
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        jumpForce = TriggerEvent.jump;
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -22,24 +21,23 @@ public class Jump : MonoBehaviour
         
     }
 
-    public void Jumping()
+    public void TouchYellow()
     {
-        rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        /*if (Input.GetButtonDown("YellowButton"))
-        {
-            rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        }
-        if (Input.GetButtonDown("BrownButton"))
-        {
-            rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        }
-        if (Input.GetButtonDown("RedButton"))
-        {
-            rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        }
-        if (Input.GetButtonDown("BlueButton"))
-        {
-            rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        }*/
+        rigidBody.AddForce(transform.up * 4.5f, ForceMode2D.Impulse);
+    }
+
+    public void TouchBrown()
+    {
+        rigidBody.AddForce(transform.up * 8, ForceMode2D.Impulse);
+    }
+
+    public void TouchRed()
+    {
+        rigidBody.AddForce(transform.up * 7, ForceMode2D.Impulse);
+    }
+
+    public void TouchBlue()
+    {
+        rigidBody.AddForce(transform.up * 5, ForceMode2D.Impulse);
     }
 }

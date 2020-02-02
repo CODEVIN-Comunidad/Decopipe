@@ -10,25 +10,39 @@ public class MoveGround : MonoBehaviour
     public Grid tilemap;
    
     private float finalSpeed;
-    private int state;
+    public static int state;
+    private GameObject startButton;
     // Start is called before the first frame update
     void Start()
     {
         state = 0;
+        startButton = GameObject.Find("StartButton");
     }
 
     // Update is called once per frame
-   void Update()
+    void Update()
     {
-        if (Input.anyKeyDown)
-        {
-            state = 1;
-        }
-
         if (state == 1)
         {
             ParallaxMoveGround();
+            startButton.SetActive(false);
         }
+
+        if(GameObject.Find("Player").transform.position.x <= -4)
+        {
+            state = 3;
+        }
+
+        if(state == 3)
+        {
+            TriggerEvent.backgroundMusic.clip = Resources.Load<AudioClip>("Music/Muerte personaje");
+            TriggerEvent.backgroundMusic.Play();
+        }
+    }
+
+    public void StartGame()
+    {
+        state = 1;
     }
 
     private void ParallaxMoveGround()
