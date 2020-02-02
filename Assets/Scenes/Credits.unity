@@ -180,43 +180,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GM
-
-    &
-
-    Soft
-
-
-    character designer:
-
-
-    Andres Mitchel Haro Silva
-
-
-
-    Game Designe:
-
-
-    Christian Eduardo Sandoval Gutierrez
-
-
-    Sound:
-
-
-    Gabriel Ruiz
-
-
-    programmer:
-
-
-    Guztavo Emilio Gonzalez Alcantar
-
-
-
-    Graphic artist:
-
-
-    Juan Carlos Valdivia zuniga'
+  m_Text: "GM\n&\nSoft\n\nDecopipe \n\ncharacter designer:\n\nAndres Mitchel Haro
+    Silva\n\n\nGame Designe:\n\nChristian Eduardo Sandoval Gutierrez\n\nSound:\n\nGabriel
+    Ruiz\n\nprogrammer:\n\nGuztavo Emilio Gonzalez Alcantar\n\n\nGraphic artist:\n\nJuan
+    Carlos Valdivia zuniga"
 --- !u!222 &105937335
 CanvasRenderer:
   m_ObjectHideFlags: 0
