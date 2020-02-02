@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MoveGround : MonoBehaviour
 {
@@ -36,7 +37,9 @@ public class MoveGround : MonoBehaviour
         if(state == 3)
         {
             TriggerEvent.backgroundMusic.clip = Resources.Load<AudioClip>("Music/Muerte personaje");
+            TriggerEvent.backgroundMusic.loop = false;
             TriggerEvent.backgroundMusic.Play();
+            SceneManager.LoadScene("Main Scene");
         }
     }
 

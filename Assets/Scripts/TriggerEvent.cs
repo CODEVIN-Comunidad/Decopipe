@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TriggerEvent : MonoBehaviour
 {
@@ -28,7 +29,10 @@ public class TriggerEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!backgroundMusic.isPlaying)
+        {
+            SceneManager.LoadScene("Main Scene");
+        }
     }
 
     public void TouchYellow()
@@ -91,6 +95,7 @@ public class TriggerEvent : MonoBehaviour
         {
             MoveGround.state = 2;
             backgroundMusic.clip = Resources.Load<AudioClip>("Music/Hit trompetas");
+            backgroundMusic.loop = false;
             backgroundMusic.Play();
         }
     }

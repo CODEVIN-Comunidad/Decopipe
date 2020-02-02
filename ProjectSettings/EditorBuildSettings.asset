@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Kinematics.unity
+    guid: ce674b0abc1004247957be23193b982a
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 256083180ccd795408a84850213f9c9a
+  - enabled: 1
     path: Assets/Scenes/Main Scene.unity
     guid: 6e38b5cbfcdd1ca45af477a0040d88fd
   - enabled: 1
